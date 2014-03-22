@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+usage() {
+	cat <<-EOF
+
+	Usage: pgihadmin ${1:tache} <CIBLE> [OPTIONS]
+
+	Cette tache permet ${2:bla bla}
+
+	PARAMETRES:
+	===========
+	    CIBLE    La cible a nettoyer : <vide> ou all, aps, ts, apsN, tsN avec N un nombre
+
+	OPTIONS:
+	========
+	    -f    Mode force
+	    -q    Mode silencieux
+
+	    -h    Affiche ce message
+
+	EOF
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>usage</tabTrigger>
+	<scope>source.shell</scope>
+	<description>Fonction usage</description>
+</snippet>
