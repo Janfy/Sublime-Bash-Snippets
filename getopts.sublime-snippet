@@ -62,9 +62,7 @@ do
 	esac
 done
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>getopts</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.shell</scope>
 	<description>while getopts … done</description>
 </snippet>

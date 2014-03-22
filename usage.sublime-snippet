@@ -21,7 +21,6 @@ usage() {
 	EOF
 }
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>usage</tabTrigger>
 	<scope>source.shell</scope>
 	<description>Fonction usage</description>

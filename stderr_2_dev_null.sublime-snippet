@@ -2,9 +2,7 @@
 	<content><![CDATA[
 2>/dev/null
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>2</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.shell</scope>
 	<description>2&gt;/dev/null</description>
 </snippet>

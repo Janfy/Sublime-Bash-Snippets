@@ -1,2 +1,2 @@
-Sublime PGIHADMIN
-=================
+Sublime Bash Snippets
+=====================
