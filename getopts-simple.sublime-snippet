@@ -2,7 +2,7 @@
     <content><![CDATA[
 while getopts :${1:?}h
 do
-	case option
+	case \$option in
 		${1})
 			${0:: #statements}
 			;;

@@ -2,7 +2,7 @@
     <content><![CDATA[
 while getopts :${1:?}a-:fqvh
 do
-	case option
+	case \$option in
 		-)
 			if [[ \${!OPTIND} == -* ]]
 			then
