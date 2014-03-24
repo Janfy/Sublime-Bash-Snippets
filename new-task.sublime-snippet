@@ -1,0 +1,70 @@
+<snippet>
+    <content><![CDATA[
+#!/bin/bash
+#
+# @version 		14.4.0-SNAPSHOT
+# @script		t_${1:TODO}.sh
+# @description	${2:TODO : Description detaillee du script}
+#
+##
+
+source p_common.sh
+
+usage() {
+	cat <<-EOF
+
+	Usage: pgihadmin ${1} <CIBLE> [-f] [-q] [-h]
+
+	Cette tache permet de ${2}
+
+	PARAMETRES:
+	===========
+	    CIBLE    Serveur cible : <vide> ou all, aps, ts, lb, ord, apsN, tsN, lbN, ordN (avec N un nombre)
+
+	OPTIONS:
+	========
+	    -f    Mode force
+	    -q    Mode silencieux
+
+	    -h    Affiche ce message
+
+	EOF
+}
+
+while getopts :${3:?}h
+do
+	case \$option in
+		${3})
+			${0:: #statements}
+			;;
+
+		:|?|h)
+			[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
+			[[ \$arg == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
+			usage
+			exit 2
+			;;
+	esac
+done
+
+# Fonctions
+
+${4:todo}() {
+	${5:echo "Fonction TODO !" # A supprimer}
+}
+
+#             _
+#  _ __  __ _(_)_ _
+# | '  \/ _` | | ' \
+# |_|_|_\__,_|_|_||_|
+#
+
+echo "TODO !"
+
+]]></content>
+	<tabTrigger>newtask</tabTrigger>
+	<scope>source.shell</scope>
+	<description>Template new task</description>
+</snippet>
+
+
