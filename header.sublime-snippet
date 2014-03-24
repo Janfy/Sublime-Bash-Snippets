@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+#!/bin/bash
+#
+# @version 		14.4.0-SNAPSHOT
+# @script		t_${1:TODO}.sh
+# @description	${2:TODO : Description detaillee du script}
+#
+##
+]]></content>
+	<tabTrigger>#!</tabTrigger>
+	<scope>source.shell</scope>
+	<description>header</description>
+</snippet>
