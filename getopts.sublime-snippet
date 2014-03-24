@@ -20,7 +20,7 @@ do
 				port)
 					if [[ ! \$value =~ ^[0-9]+\$ ]]
 					then
-						print_error "L'option --\${OPTARG} a besoin d'un entier en parametre. \"\${value}\" n'est pas un entier."
+						print_error "L'option --\$OPTARG a besoin d'un entier en parametre. \"\$value\" n'est pas un entier."
 						usage
 						exit 2
 					fi
