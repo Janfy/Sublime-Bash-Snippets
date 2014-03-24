@@ -3,13 +3,13 @@
 usage() {
 	cat <<-EOF
 
-	Usage: pgihadmin ${1:tache} <CIBLE> [OPTIONS]
+	Usage: pgihadmin ${1:tache} <CIBLE> [-f] [-q] [-h]
 
-	Cette tache permet ${2:bla bla}
+	Cette tache permet de ${2:bla bla}
 
 	PARAMETRES:
 	===========
-	    CIBLE    La cible a nettoyer : <vide> ou all, aps, ts, apsN, tsN avec N un nombre
+	    CIBLE    Serveur cible : <vide> ou all, aps, ts, lb, ord, apsN, tsN, lbN, ordN (avec N un nombre)
 
 	OPTIONS:
 	========
