@@ -7,15 +7,14 @@
 			"author": "Jean-Philippe BOLATRE",
 			"homepage": "https://github.com/Janfy/Sublime-Bash-Snippets",
 			"details": "https://github.com/Janfy/Sublime-Bash-Snippets",
-			"readme": "https://raw.githubusercontent.com/Janfy/Sublime-Bash-Snippets/master/README.md",
+			"issues": "https://github.com/Janfy/Sublime-Bash-Snippets/issues",
+			"readme": "https://raw.github.com/Janfy/Sublime-Bash-Snippets/master/README.md",
 			"labels": ["bash", "snippet"],
 			"releases": [
 				{
 					"sublime_text": "*",
-					"platforms": ["windows", "osx", "linux"],
-					"version": "0.0.1",
-					"url": "https://github.com/Janfy/Sublime-Bash-Snippets/tree/master",
-					"date": "2014-03-24 23:37:00"
+					"details": "https://github.com/Janfy/Sublime-Bash-Snippets/tree/master",
+					"platforms": ["windows", "osx", "linux"]
 				}
 			]
 		}
