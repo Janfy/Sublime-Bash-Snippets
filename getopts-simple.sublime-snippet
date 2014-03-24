@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+while getopts :${1:?}h
+do
+	case option
+		${1})
+			${0:: #statements}
+			;;
+
+		:|?|h)
+			[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
+			[[ \$arg == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
+			usage
+			exit 2
+			;;
+	esac
+done
+]]></content>
+	<tabTrigger>getopts</tabTrigger>
+	<scope>source.shell</scope>
+	<description>while getopts … done (simple)</description>
+</snippet>
