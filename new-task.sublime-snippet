@@ -49,8 +49,13 @@ done
 
 # Fonctions
 
+#
+# TODO function description
+# @param	TODO The first parameter
+# @return	TODO
+#
 ${4:todo}() {
-	${5:echo "Fonction TODO !" # A supprimer}
+	${5:echo "Fonction TODO !"}
 }
 
 #             _
