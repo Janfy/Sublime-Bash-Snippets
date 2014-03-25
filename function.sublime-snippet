@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+#
+# TODO function description
+# @param	TODO The first parameter
+# @return
+#
+${1:function_name}() {
+	local ${2:param}=\$1; shift
+	${3:echo "TODO !"}
+}
+]]></content>
+	<tabTrigger>function</tabTrigger>
+	<scope>source.shell</scope>
+	<description>New function</description>
+</snippet>
