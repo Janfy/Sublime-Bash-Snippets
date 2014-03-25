@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+[[ ${1:condition} ]] && ${2:echo "true"} || ${3:echo "false"}
+]]></content>
+	<tabTrigger>ite</tabTrigger>
+	<scope>source.shell</scope>
+	<description>[[ ]] &amp;&amp; true || false</description>
+</snippet>
