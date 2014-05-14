@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-while getopts :${1:?}h
+while getopts :${1:?}h option
 do
 	case \$option in
 		${1})
@@ -8,8 +8,8 @@ do
 			;;
 
 		:|?|h)
-			[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
-			[[ \$arg == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
+			[[ \$option == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
+			[[ \$option == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
 			usage
 			exit 2
 			;;
