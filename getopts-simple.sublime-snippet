@@ -11,7 +11,7 @@ do
 			[[ \$option == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
 			[[ \$option == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
 			usage
-			exit 2
+			exit \$([[ \$arg == h ]] && echo 0 || echo 2)
 			;;
 	esac
 done
