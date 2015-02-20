@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+while read -r line
+do
+	echo "\$line"
+done < ${1:/path/to/file}
+]]></content>
+	<tabTrigger>while</tabTrigger>
+	<scope>source.shell</scope>
+	<description>while read file</description>
+</snippet>
