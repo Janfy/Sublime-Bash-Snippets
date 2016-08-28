@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+cat <<-EOF ${1:>/path/to/file}
+	$2
+EOF
+]]></content>
+	<tabTrigger>cat</tabTrigger>
+	<scope>source.shell</scope>
+	<description>cat... EOF</description>
+</snippet>
