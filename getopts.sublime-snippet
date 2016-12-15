@@ -41,17 +41,11 @@ do
 			${0:: #statements}
 			;;
 
-		f)
-			FORCE=1
-			;;
+		f) FORCE=1 ;;
 
-		q)
-			QUIET=1
-			;;
+		q) QUIET=1 ;;
 
-		v)
-			VERBOSE=1
-			;;
+		v) VERBOSE=1 ;;
 
 		:|?|h)
 			[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
