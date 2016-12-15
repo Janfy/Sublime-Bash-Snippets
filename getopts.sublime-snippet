@@ -1,8 +1,8 @@
 <snippet>
     <content><![CDATA[
-while getopts :${1:?}a-:fqvh option
+while getopts :${1:?}a-:fqvh arg
 do
-	case \$option in
+	case \$arg in
 		-)
 			if [[ \${!OPTIND} == -* ]]
 			then
@@ -34,7 +34,7 @@ do
 				esac
 			;;
 		a)
-			[[ \$OPTARG == -* ]] && print_error "L'option -\$option requiert un argument !" && usage && exit 2
+			[[ \$OPTARG == -* ]] && print_error "L'option -\$arg requiert un argument !" && usage && exit 2
 			;;
 
 		${1})
@@ -54,8 +54,8 @@ do
 			;;
 
 		:|?|h)
-			[[ \$option == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
-			[[ \$option == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
+			[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
+			[[ \$arg == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
 			usage
 			exit \$([[ \$arg == h ]] && echo 0 || echo 2)
 			;;
