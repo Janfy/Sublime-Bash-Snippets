@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+read -r -d '' ${1:variableName} <<-EOF
+${2:Content to assign to ${1}}
+EOF
+
+echo "\$${1}"
+$3
+]]></content>
+	<tabTrigger>read</tabTrigger>
+	<scope>source.shell</scope>
+	<description>Assign heredoc to variable</description>
+</snippet>
