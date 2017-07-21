@@ -4,9 +4,8 @@ while getopts :${1:?}a-:fqvh arg
 do
 	case \$arg in
 		-)
-			if [[ \${!OPTIND} == -* ]]
-			then
-				value=
+			if [[ \${!OPTIND} == -* ]]; then
+				unset -v value
 			else
 				value="\${!OPTIND}"
 				((OPTIND++))
@@ -18,8 +17,7 @@ do
 					;;
 
 				port)
-					if [[ ! \$value =~ ^[0-9]+\$ ]]
-					then
+					if [[ ! \$value =~ ^[0-9]+\$ ]]; then
 						print_error "L'option --\$OPTARG a besoin d'un entier en parametre. \"\$value\" n'est pas un entier."
 						usage
 						exit 2

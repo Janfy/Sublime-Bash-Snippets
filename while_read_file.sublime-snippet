@@ -1,7 +1,6 @@
 <snippet>
     <content><![CDATA[
-while read -r line
-do
+while read -r line; do
 	echo "\$line"
 done < ${1:/path/to/file}
 ]]></content>
