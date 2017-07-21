@@ -31,71 +31,22 @@ usage() {
 	EOF
 }
 
-while getopts :${3:?}a-:fqvh arg
-do
-	case \$arg in
-		-)
-			if [[ \${!OPTIND} == -* ]]
-			then
-				value=
-			else
-				value="\${!OPTIND}"
-				((OPTIND++))
-			fi
-
-			case \$OPTARG in
-				host)
-					HOST=\$value
-					;;
-
-				port)
-					if [[ ! \$value =~ ^[0-9]+\$ ]]
-					then
-						print_error "L'option --\$OPTARG a besoin d'un entier en parametre. \"\$value\" n'est pas un entier."
-						usage
-						exit 2
-					fi
-					;;
-
-				*)
-					print_error "Le parametre '--\$OPTARG' n'est pas reconnu !"
-            		usage
-    				exit 2
-            		;;
-				esac
-			;;
-		a)
-			[[ \$OPTARG == -* ]] && print_error "L'option -\$arg requiert un argument !" && usage && exit 2
-			;;
-
-		${3})
-			${4:: #statements}
-			;;
-
-		f) FORCE=1 ;;
-
-		q) QUIET=1 ;;
-
-		v) VERBOSE=1 ;;
-
-		:|?|h)
-			[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
-			[[ \$arg == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
-			usage
-			exit 2
-			;;
-	esac
-done
-
-# Fonctions
+#   __             _   _
+#  / _|___ _ _  __| |_(_)___ _ _  ___
+# |  _/ _ \ ' \/ _|  _| / _ \ ' \(_-<
+# |_| \___/_||_\__|\__|_\___/_||_/__/
+#
 
 #
-# TODO function description
+# TODO Function '${5}' description
 # @param	TODO The first parameter
 # @return	TODO
 #
-${4:todo}() {
-	${5:echo "Fonction TODO !"}
+${5:function_name}() {
+	local firstParam=\$1; shift
+	local secondParam=\$1; shift
+
+	${6:echo "Function '${5}' not yet implemented!" # TODO}
 }
 
 #             _
@@ -104,7 +55,60 @@ ${4:todo}() {
 # |_|_|_\__,_|_|_||_|
 #
 main() {
-	! # TODO
+	while getopts :${3:?}a-:fqvh arg
+	do
+		case \$arg in
+			-)
+				if [[ \${!OPTIND} == -* ]]; then
+					unset -v value
+				else
+					value="\${!OPTIND}"
+					((OPTIND++))
+				fi
+
+				case \$OPTARG in
+					host)
+						HOST=\$value
+						;;
+
+					port)
+						if [[ ! \$value =~ ^[0-9]+\$ ]]; then
+							print_error "L'option --\$OPTARG a besoin d'un entier en parametre. \"\$value\" n'est pas un entier."
+							usage
+							exit 2
+						fi
+						;;
+
+					*)
+						print_error "Le parametre '--\$OPTARG' n'est pas reconnu !"
+	            		usage
+	    				exit 2
+	            		;;
+					esac
+				;;
+			a)
+				[[ \$OPTARG == -* ]] && print_error "L'option -\$arg requiert un argument !" && usage && exit 2
+				;;
+
+			${3})
+				${4:: #statements}
+				;;
+
+			f) FORCE=1 ;;
+
+			q) QUIET=1 ;;
+
+			v) VERBOSE=1 ;;
+
+			:|?|h)
+				[[ \$arg == \? ]] && print_error "L'option -\$OPTARG n'est pas prise en charge !"
+				[[ \$arg == : ]] && print_error "L'option -\$OPTARG requiert un argument !"
+				usage
+				exit \$([[ \$arg == h ]] && echo 0 || echo 2)
+				;;
+		esac
+	done
+	$7
 }
 
 main "\$@"
