@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 while getopts :${1:?}a-:fqvh arg
 do
 	case \$arg in
@@ -26,9 +26,9 @@ do
 
 				*)
 					print_error "Le parametre '--\$OPTARG' n'est pas reconnu !"
-            		usage
-    				exit 2
-            		;;
+					usage
+					exit 2
+					;;
 				esac
 			;;
 		a)
