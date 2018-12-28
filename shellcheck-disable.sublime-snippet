@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+# shellcheck disable=SC${1:2000}
+]]></content>
+	<tabTrigger>scd</tabTrigger>
+	<scope>source.shell</scope>
+	<description># shellcheck disable=SCxxxx</description>
+</snippet>
