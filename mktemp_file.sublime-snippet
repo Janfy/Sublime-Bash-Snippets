@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
-${1:tmpFile}=\$(mktemp --tmpdir tmpPGIH${2:-pgihadmin}.XXXXXXXXXX) || \
-	print_error_and_exit "Impossible de creer un fichier temporaire dans \$TMPDIR !"
+${1:tmpFile}=\$(mktemp --tmpdir tmpPGIH${2:-pgihadmin}.XXXXXXXXXX) \
+	|| print_error_and_exit "Impossible de creer un fichier temporaire dans \$TMPDIR !"
 trap "rm -f \${${1}:-/tmp/dummy}" 0 1 2 3 15
 ]]></content>
 	<tabTrigger>mktemp</tabTrigger>

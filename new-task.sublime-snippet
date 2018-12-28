@@ -55,8 +55,7 @@ ${5:function_name}() {
 # |_|_|_\__,_|_|_||_|
 #
 main() {
-	while getopts :${3:?}a-:fqvh arg
-	do
+	while getopts :${3:?}a-:fqvh arg; do
 		case \$arg in
 			-)
 				if [[ \${!OPTIND} == -* ]]; then
@@ -72,18 +71,15 @@ main() {
 						;;
 
 					port)
-						if [[ ! \$value =~ ^[0-9]+\$ ]]; then
-							print_error "L'option --\$OPTARG a besoin d'un entier en parametre. \"\$value\" n'est pas un entier."
-							usage
-							exit 2
-						fi
+						check_int "-\$OPTARG" "\$value"
+						PORT=\$value
 						;;
 
 					*)
 						print_error "Le parametre '--\$OPTARG' n'est pas reconnu !"
-	            		usage
-	    				exit 2
-	            		;;
+						usage
+						exit 2
+						;;
 					esac
 				;;
 			a)

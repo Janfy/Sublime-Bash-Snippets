@@ -1,7 +1,6 @@
 <snippet>
 	<content><![CDATA[
-while getopts :${1:?}a-:fqvh arg
-do
+while getopts :${1:?}a-:fqvh arg; do
 	case \$arg in
 		-)
 			if [[ \${!OPTIND} == -* ]]; then
@@ -17,11 +16,8 @@ do
 					;;
 
 				port)
-					if [[ ! \$value =~ ^[0-9]+\$ ]]; then
-						print_error "L'option --\$OPTARG a besoin d'un entier en parametre. \"\$value\" n'est pas un entier."
-						usage
-						exit 2
-					fi
+					check_int "-\$OPTARG" "\$value"
+					PORT=\$value
 					;;
 
 				*)

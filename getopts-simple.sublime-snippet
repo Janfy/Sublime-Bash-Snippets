@@ -1,7 +1,6 @@
 <snippet>
     <content><![CDATA[
-while getopts :${1:?}h arg
-do
+while getopts :${1:?}h arg; do
 	case \$arg in
 		${1})
 			${0:: #statements}
